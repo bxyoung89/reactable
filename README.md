@@ -6,6 +6,8 @@
 [![npm](https://img.shields.io/npm/dt/reactable.svg)](https://www.npmjs.com/package/reactable)
 [![Build Status](https://travis-ci.org/abdulrahman-khankan/reactable.svg?branch=master)](https://travis-ci.org/abdulrahman-khankan/reactable)
 
+**THIS REPO IS NOT ACTIVELY MAINTAINED. PLEASE CHOOSE ANOTHER LIBRARY**
+
 Fast, flexible, and simple data tables in React (up to v16).
 
 Reactable allows you to display tabular data client-side, and provides sorting,
@@ -19,10 +21,14 @@ something complicated or unconventional.
 There might be hidden bugs lurking around any corner. I'll try to
 tag any releases with breaking changes.
 
+
 **Note**: As of version 1.0.0 ownership of npm reactable package has transferred
 and linked to this repo as previous owner is no longer maintaining the project.
 Old issues can be found [here](https://github.com/glittershark/reactable/issues).
 Feel free to submit new issues [here](https://github.com/abdulrahman-khankan/reactable/issues).
+
+**SECOND NOTE**: This project was abandoned again and the 1.1.0 version isn't compiled down to es5. This repo fixes it. Old stuff [here](https://github.com/abdulrahman-khankan/reactable).
+
 
 ## Table of Contents
 

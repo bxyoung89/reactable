@@ -28,3 +28,6 @@ tmp/*
 ^tmp/.keep
 
 build/tests
+
+# intellij project directory
+.idea

@@ -28,7 +28,10 @@ module.exports = function(grunt) {
             }
         },
         babel: {
-            options: { sourceRoot: 'src' },
+            options: {
+                sourceRoot: 'src',
+                // presets: ['@babel/preset-env'],
+            },
             umd: {
                 files: {
                     'tmp/reactable/lib/to_array.js': 'src/reactable/lib/to_array.jsx',
@@ -51,7 +54,23 @@ module.exports = function(grunt) {
 
                     'build/tests/reactable_test.js': 'tests/reactable_test.jsx'
                 },
-                options: { modules: 'umdStrict' }
+                // options: { modules: 'umdStrict' },
+                options: {
+                    presets: [
+                        [
+                            "@babel/preset-env",
+                            {
+                                targets: {
+                                    ie: "11"
+                                }
+                            }
+                        ],
+                        "@babel/preset-react",
+                    ],
+                    plugins: [
+                        "@babel/plugin-transform-modules-umd"
+                    ]
+                }
             },
             common: {
                 files: {
@@ -75,7 +94,20 @@ module.exports = function(grunt) {
 
                     'build/tests/reactable_test.js': 'tests/reactable_test.jsx'
                 },
-                options: { modules: 'common' }
+                // options: { modules: 'common' }
+                options: {
+                    presets: [
+                        [
+                            "@babel/preset-env",
+                            {
+                                targets: {
+                                    ie: "11"
+                                }
+                            }
+                        ],
+                        "@babel/preset-react",
+                    ]
+                }
             }
         },
         concat: {
@@ -105,7 +137,7 @@ module.exports = function(grunt) {
             umdHack: {
                 files: [{
                     prepend: 'window.React["default"] = window.React;\n' +
-                             'window.ReactDOM["default"] = window.ReactDOM;\n',
+                        'window.ReactDOM["default"] = window.ReactDOM;\n',
                     input: 'build/reactable.js',
                     output: 'build/reactable.js'
                 }]
@@ -131,4 +163,3 @@ module.exports = function(grunt) {
     grunt.registerTask('build', ['babel:common', 'buildBrowser']);
     grunt.registerTask('default', ['build', 'watch:build']);
 };
-
